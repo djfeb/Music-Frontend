@@ -1,0 +1,109 @@
+╔══════════════════════════════════════════════════════════════════╗
+║         MUSIC STREAMING APP - QUICK DEPLOYMENT GUIDE             ║
+║              Deploy to Ubuntu Server (No GitHub)                 ║
+╚══════════════════════════════════════════════════════════════════╝
+
+📦 STEP 1: TRANSFER FILES TO SERVER
+───────────────────────────────────────────────────────────────────
+From Windows:
+  scp -r C:\path\to\project username@server-ip:/home/username/
+
+Or use: WinSCP, FileZilla, or Cyberduck
+
+
+🔐 STEP 2: CONNECT TO SERVER
+───────────────────────────────────────────────────────────────────
+  ssh username@server-ip
+  cd /home/username/music-streaming-app
+
+
+⚙️  STEP 3: CONFIGURE ENVIRONMENT
+───────────────────────────────────────────────────────────────────
+  cp .env.example .env.local
+  nano .env.local
+
+Update these values:
+  ✓ NEXT_PUBLIC_APP_URL=http://YOUR_SERVER_IP:3000
+  ✓ Firebase credentials (API key, project ID, etc.)
+  ✓ GENIUS_ACCESS_TOKEN=your-token
+
+Save: Ctrl+X → Y → Enter
+
+
+🚀 STEP 4: DEPLOY
+───────────────────────────────────────────────────────────────────
+  chmod +x *.sh
+  ./deploy.sh
+
+Done! Access at: http://your-server-ip:3000
+
+
+📋 MANAGEMENT COMMANDS
+───────────────────────────────────────────────────────────────────
+  ./status.sh   - Check application status
+  ./logs.sh     - View real-time logs
+  ./update.sh   - Update after code changes
+  ./stop.sh     - Stop application
+  
+  docker restart music-streaming  - Restart app
+  docker ps                        - List containers
+
+
+🔧 TROUBLESHOOTING
+───────────────────────────────────────────────────────────────────
+Port already in use:
+  sudo lsof -i :3000
+  sudo kill -9 <PID>
+
+Permission denied:
+  sudo usermod -aG docker $USER
+  newgrp docker
+
+Firewall blocking:
+  sudo ufw allow 3000/tcp
+  sudo ufw reload
+
+Check logs:
+  ./logs.sh
+  docker logs music-streaming
+
+
+🌐 ALTERNATIVE: DOCKER COMPOSE
+───────────────────────────────────────────────────────────────────
+  docker-compose up -d              # Start
+  docker-compose logs -f            # View logs
+  docker-compose down               # Stop
+  docker-compose up -d --build      # Rebuild & restart
+
+
+📚 DETAILED GUIDES
+───────────────────────────────────────────────────────────────────
+  DEPLOY_LOCAL.md              - Quick local deployment
+  COOLIFY_LOCAL_DEPLOYMENT.md  - Complete local guide
+  COOLIFY_DEPLOYMENT.md        - Coolify with GitHub
+  README.md                    - Application documentation
+
+
+✅ POST-DEPLOYMENT CHECKLIST
+───────────────────────────────────────────────────────────────────
+  □ Application accessible in browser
+  □ User registration works
+  □ User login works
+  □ Music playback functional
+  □ Search works
+  □ Playlists can be created
+  □ Firebase authentication working
+  □ Lyrics feature operational
+
+
+🔗 USEFUL LINKS
+───────────────────────────────────────────────────────────────────
+  Coolify:   https://coolify.io/docs
+  Docker:    https://docs.docker.com
+  Firebase:  https://firebase.google.com/docs
+  Next.js:   https://nextjs.org/docs
+
+
+═══════════════════════════════════════════════════════════════════
+Need help? Check the detailed guides or run: ./status.sh
+═══════════════════════════════════════════════════════════════════

@@ -1,0 +1,36 @@
+{
+  "name": "music-lyrics-scraper",
+  "version": "1.0.0",
+  "description": "Lyrics scraper and API for music streaming app",
+  "main": "lyrics_scraper.js",
+  "scripts": {
+    "install-deps": "npm install",
+    "scrape": "node lyrics_scraper.js",
+    "test": "node test_lyrics.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12",
+    "mysql2": "^3.6.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "lyrics",
+    "scraper",
+    "music",
+    "api",
+    "google",
+    "cheerio"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
+
+
+
+
+
+

@@ -1,0 +1,184 @@
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "dynamicRoutes": [
+    {
+      "page": "/album/[id]",
+      "regex": "^/album/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/album/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/proxy/[...path]",
+      "regex": "^/api/proxy/(.+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPpath": "nxtPpath"
+      },
+      "namedRegex": "^/api/proxy/(?<nxtPpath>.+?)(?:/)?$"
+    },
+    {
+      "page": "/artist/[id]",
+      "regex": "^/artist/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/artist/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/artist/[id]/albums",
+      "regex": "^/artist/([^/]+?)/albums(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/artist/(?<nxtPid>[^/]+?)/albums(?:/)?$"
+    },
+    {
+      "page": "/artist/[id]/tracks",
+      "regex": "^/artist/([^/]+?)/tracks(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/artist/(?<nxtPid>[^/]+?)/tracks(?:/)?$"
+    },
+    {
+      "page": "/playlist/[id]",
+      "regex": "^/playlist/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/playlist/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/track/[id]",
+      "regex": "^/track/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/track/(?<nxtPid>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/albums",
+      "regex": "^/albums(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/albums(?:/)?$"
+    },
+    {
+      "page": "/artists",
+      "regex": "^/artists(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/artists(?:/)?$"
+    },
+    {
+      "page": "/create-playlist",
+      "regex": "^/create\\-playlist(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/create\\-playlist(?:/)?$"
+    },
+    {
+      "page": "/gospel-music",
+      "regex": "^/gospel\\-music(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gospel\\-music(?:/)?$"
+    },
+    {
+      "page": "/library",
+      "regex": "^/library(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/library(?:/)?$"
+    },
+    {
+      "page": "/liked-songs",
+      "regex": "^/liked\\-songs(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/liked\\-songs(?:/)?$"
+    },
+    {
+      "page": "/new-releases",
+      "regex": "^/new\\-releases(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/new\\-releases(?:/)?$"
+    },
+    {
+      "page": "/profile",
+      "regex": "^/profile(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/profile(?:/)?$"
+    },
+    {
+      "page": "/search",
+      "regex": "^/search(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/search(?:/)?$"
+    },
+    {
+      "page": "/sign-in",
+      "regex": "^/sign\\-in(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/sign\\-in(?:/)?$"
+    },
+    {
+      "page": "/sign-up",
+      "regex": "^/sign\\-up(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/sign\\-up(?:/)?$"
+    },
+    {
+      "page": "/test-config",
+      "regex": "^/test\\-config(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/test\\-config(?:/)?$"
+    },
+    {
+      "page": "/trending",
+      "regex": "^/trending(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/trending(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "RSC",
+    "varyHeader": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch",
+    "prefetchHeader": "Next-Router-Prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "Next-Router-Segment-Prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments"
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  },
+  "rewrites": []
+}
